@@ -1,41 +1,37 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
+import Container from '@mui/material/Container';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
+import Button from '@mui/material/Button';
 import './App.css';
 
 const Hello = () => {
   return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
+    <>
+      <div className="buttongroup">
+        <Button variant="contained" size="small" className="button">
+          N
+        </Button>
+        <Button variant="contained" size="small" className="button">
+          C
+        </Button>
+        <Button variant="contained" size="small" className="button">
+          S
+        </Button>
       </div>
-      <h1>IS THIS WORKING?</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            DO NOT Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            DO NOT DONATE
-          </button>
-        </a>
-      </div>
-    </div>
+      <Container maxWidth="sm" className="container">
+        <TextareaAutosize
+          minRows={4}
+          maxRows={10}
+          placeholder="..."
+          defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua."
+          style={{ width: 500, height: 300 }}
+        />
+      </Container>
+      <Button variant="contained" className="mainButton">
+        Contained
+      </Button>
+    </>
   );
 };
 
